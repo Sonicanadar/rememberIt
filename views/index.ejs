@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishaa RememberMe words</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body id="app">
+
+  <form action="/add" method="post">
+    <input type="text" name="enteredWord" autofocus placeholder="<%= locals.error ? error :  'Enter word'%>">
+    <button type="submit">Add</button>
+  </form>
+
+  <form class="container" action="/refresh" method="post">
+    <div class="horizontal-container">
+      
+
+    </div>
+ 
+    <ul>
+      <% for(let i = 0; i < word.length; i++){ %>
+          <h1><%= word[i].words %></h1>
+      <% } %>
+    </ul>
+    <h1><%= locals.message %></h1>
+  
+    <button type="submit">Refresh</button>
+   </form>
+
+</body>
+
+</html>
